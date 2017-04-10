@@ -1,3 +1,15 @@
-<h1>
-  {{title}}
-</h1>
+<section class="container">
+   <section class="row">
+    <div class="page-header">
+     <h1>Party Attendance List App <small>Angular2 Components Communication</small></h1>
+    </div>
+   </section>
+  <app-add-attendee  (addAttendeeEmitter)="onAddAttendee($event)"></app-add-attendee>
+  <hr>
+   <section class="row">
+    <article class="col-xs-12 col-md-12">
+       <app-view-attendees *ngFor="let attendee of attendees; let i = index" [data]="attendee" [lol]="i">
+       </app-view-attendees>
+    </article>
+  </section>
+</section>

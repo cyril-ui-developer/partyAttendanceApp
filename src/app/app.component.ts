@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  attendees: Array<{}> =[]; 
+  
+  onAddAttendee(data:{name:string,address:string, signInTime:Date}){
+    this.attendees.push({
+      name : data.name,
+      address : data.address,
+      signInTime: new Date()
+    })
+  }
 }
